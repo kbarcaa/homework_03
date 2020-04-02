@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock, Paper, & Scissors</title>
+    <link rel="stylesheet" href="../RPS/stye.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Game of Rock, Paper, & Scissors!</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Can you beat the Machine?</h2>
+        </div>
+        <!-- <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div> -->
+        <div class="card-footer">
+          <button id="play" class="btn">Play!</button>
+        </div>
+      </div>
+    </div>
+
+
+  <script>
+
+    var userChoice = prompt("Let's play a game! Choose one: Rock, Paper, or Scissors?")
+    
+    for (var i=0; i < 1; i++){
+      var pcChoice = Math.floor((Math.random()*4)+1);
+        console.log(pcChoice);
+    }
+
+    if (pcChoice === 1){
+      pcChoice = "rock";
+    } else if(pcChoice === 2){
+      pcChoice = "paper";
+    } else {
+      pcChoice = "scissors";
+    } 
+
+    var compare = function(userChoice, pcChoice){
+      if (userChoice === pcChoice){
+        //console.log("PC chose: " + pcChoice);
+        alert("PC chose the same. It's a tie!");
+      } else if (userChoice === "rock"){
+        if (pcChoice === "scissors"){
+          console.log(pcChoice)
+          alert("Congratulations! PC chose: Scissors. You win!");
+        } else {
+          alert("PC chose: Paper. You lose.")
+        }
+      } else if (userChoice === "paper"){
+        if (pcChoice === "rock"){
+          console.log(pcChoice)
+          alert("Congratulations! PC chose: Rock. You win!");
+        } else {
+          alert("PC chose: Scissors. You lose.")
+        }
+      } else if (userChoice === "scissors"){
+        if (pcChoice === "paper"){
+          console.log(pcChoice)
+          alert("Congratulations! PC chose: Paper. You win!");
+        } else {
+          alert("PC chose: Rock. You lose.")
+        }
+      } 
+    }
+
+    compare(userChoice, pcChoice);
+
+
+  // document.getElementById("play").addEventListener("click",);
+
+  </script>
+
+
+  </body>
+</html>
